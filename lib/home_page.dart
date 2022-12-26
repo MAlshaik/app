@@ -1,3 +1,4 @@
+import 'package:app/description_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,6 +8,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
+        drawer: SafeArea(
+          child: Drawer(
+              child: Column(
+            children: const [
+              DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.brown,
+                  ),
+                  child: ListTile(title: Text('Flutter Mapp')))
+            ],
+          )),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -69,7 +82,7 @@ class HomePage extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (BuildContext context) {
-                        return Container();
+                        return const DescriptionPage();
                       },
                     ),
                   );
